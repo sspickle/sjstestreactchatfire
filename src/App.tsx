@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+const Foo:FunctionComponent = () => {
+
+  const [theVal, setTheVal] = useState(0)
+
+  return <div>
+    <button onClick={() => setTheVal(theVal + 1)}>+</button>
+    <span>{theVal}</span>
+    <button onClick={() => setTheVal(theVal - 1)}>-</button>
+  </div>
+}
 
 function App() {
   return (
@@ -18,6 +29,7 @@ function App() {
         >
           Learn React
         </a>
+        <Foo />
       </header>
     </div>
   );
